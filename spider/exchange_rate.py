@@ -18,14 +18,13 @@ class FixerIo():
     """
 
     base_url = 'https://api.fixer.io/{}?base={}'
-    base_url_2 = 'https://api.fixer.io/{}'   # 2005-03-31 之前的数据没有base，只能通过换算取得
 
     def __init__(self, source):
         self.source = source
 
     def get_one_day(self, day):
-        # url = self.base_url.format(day.strftime('%Y-%m-%d'), self.source)      # todo: urlencode
-        url = self.base_url_2.format(day.strftime('%Y-%m-%d'))     
+        url = self.base_url.format(day.strftime('%Y-%m-%d'), self.source)      # todo: urlencode
+        # url = self.base_url_2.format(day.strftime('%Y-%m-%d'))     
         logger.info('[crawl %s exchange sipder] <fixer.io> url: %s', day, url)
         resp = requests.get(url)
         data = resp.json()
