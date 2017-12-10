@@ -1,0 +1,1 @@
+0 10    * * *   root    source /root/.zshrc && cd /my-workspace-api && python3 spider/exchange_rate.py
