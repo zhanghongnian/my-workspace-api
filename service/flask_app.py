@@ -8,6 +8,7 @@ from models.exchange_rate import ExchangeRate
 
 app = Flask(__name__)
 
+# todo 开机启动
 
 @app.route('/')
 def index():
