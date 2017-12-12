@@ -14,3 +14,8 @@ log_conf = {
     "log_dir": "/tmp/logs",
     "level": logging.DEBUG
 }
+
+zhixin_conf = {
+    "key": os.getenv('ZHIXIN_KEY'),
+    "uid": os.getenv('ZHIXIN_UID')
+}
